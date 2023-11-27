@@ -10,3 +10,4 @@ if (typeof name == "string" || typeof age == "string") {
 }
 console.log(true && true);
 console.log(5 > 3 && 6 > 4);
+
