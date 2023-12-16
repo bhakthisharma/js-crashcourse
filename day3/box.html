@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box</title>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+  </body>
+
+  <button id="button">Dubu</button>
+
+  <script>
+    const parent = document.querySelector(".parent");
+    console.log(parent);
+    const child1 = parent.firstElementChild;
+    console.log(child1);
+    const child2 = child1.nextElementSibling;
+    console.log(child2);
+    const child3 = child2.nextElementSibling;
+    console.log(child3);
+    const parentp = child1.parentNode;
+    console.log(parentp);
+    const button = document
+      .getElementById("button")
+      .addEventListener("click", () => {
+        parent.style.backgroundColor = "Green";
+        child1.innerText = "Bubu";
+        child1.style.color = "White";
+        child1.style.fontSize = "40px";
+        child1.style.alignItem = "center";
+        child2.innerText = "Dudu";
+        child2.style.color = "White";
+        child2.style.fontSize = "40px";
+        child2.style.alignItem = "center";
+        child3.remove();
+      });
+    child2.addEventListener("click", () => {
+      parent.style.backgroundColor = "Yellow";
+    });
+  </script>
+  <style>
+    .parent {
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+      gap: 10px;
+      background-color: #fc4747;
+    }
+
+    .child {
+      height: 100px;
+      width: 100px;
+      background-color: rgb(44, 44, 238);
+    }
+    button {
+      margin-top: 10px;
+      font-size: 25px;
+    }
+  </style>
+</html>
