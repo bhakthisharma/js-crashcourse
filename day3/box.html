@@ -26,6 +26,13 @@
     console.log(child3);
     const parentp = child1.parentNode;
     console.log(parentp);
+    const nextButton = document.createElement("Button");
+    nextButton.classList.add("nextbutton");
+    nextButton.innerText = "Budu";
+    document.body.appendChild(nextButton);
+    document.querySelector(".nextbutton").addEventListener("click", () => {
+      parent.lastChild.remove();
+    });
     const button = document
       .getElementById("button")
       .addEventListener("click", () => {
@@ -38,7 +45,9 @@
         child2.style.color = "White";
         child2.style.fontSize = "40px";
         child2.style.alignItem = "center";
-        child3.remove();
+        const nextChild = document.createElement("div");
+        nextChild.classList.add("child");
+        parent.appendChild(nextChild);
       });
     child2.addEventListener("click", () => {
       parent.style.backgroundColor = "Yellow";
